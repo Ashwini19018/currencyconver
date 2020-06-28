@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      uri: ${CurrencyConvertms.configserverurl:http://192.168.99.100:8888}
+      fail-fast: false
+  application:
+    name: CurrencyConvertms
+  profiles:    active: dev
+

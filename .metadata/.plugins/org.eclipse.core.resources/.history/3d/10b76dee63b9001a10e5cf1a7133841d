@@ -1,0 +1,7 @@
+CREATE TABLE `currconversion` (
+  `countrycode` varchar(11) NOT NULL,
+  `conversionFactor` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`countrycode`)
+) ENGINE=InnoDB
+
+

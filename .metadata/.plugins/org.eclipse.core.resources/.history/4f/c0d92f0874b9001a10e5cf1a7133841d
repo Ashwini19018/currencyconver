@@ -1,0 +1,10 @@
+package com.ms.boot.ConvertCurrencyms.controller;
+
+public class ResponseStatus  extends RuntimeException {
+
+	public ResponseStatus(String status ,String errormessage) {
+		    super("Could not find conversion factor ");
+		  }
+		}
+
+

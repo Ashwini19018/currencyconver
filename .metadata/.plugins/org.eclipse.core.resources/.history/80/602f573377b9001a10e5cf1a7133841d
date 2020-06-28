@@ -1,0 +1,18 @@
+package com.ms.boot.CurrencyConvertms.service;
+
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+//import com.ms.boot.CurrencyConvertms.model.ConvertCurrencyRequest;
+//import com.ms.boot.CurrencyConvertms.model.ConvertCurrencyResponse;
+
+/*@FeignClient(name = "ConvertCurrencyms", fallback = ConvertCurrencytFallback.class)
+public interface ConvertCurrencyproxy {
+	
+	@RequestMapping(value = "/caldisc", method = RequestMethod.POST)
+	public ConvertCurrencyproxy calculateDiscount(ConvertCurrencyproxy dRequest);
+*/
+//}
+
+@FeignClient(name="currencyconversion", url="localhost:8081");  

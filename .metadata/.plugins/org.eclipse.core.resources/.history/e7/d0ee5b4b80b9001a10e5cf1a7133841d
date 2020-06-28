@@ -1,0 +1,68 @@
+package com.ms.boot.CurrencyConvertms.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import com.ms.boot.ConvertCurrencyms.controller.ConvertCurrencyController;
+//import com.ms.boot.ConvertCurrencyms.controller.ResponseStatus;
+import com.ms.boot.ConvertCurrencyms.model.ConvertCurrencyDTO;
+//import com.ms.boot.CurrencyConvertms.repo.CurrencyConvertRepository;
+
+public class CurrencyConvertService {
+	
+
+	@Autowired
+	//    CurrencyConvertRepository repository;
+
+ JdbcTemplate jdbcTemplate ;
+	     
+// CurrencyConvertService service =new CurrencyConvertService();
+	     
+	 /*   public CurrencyConvertDTO getConversionFactor(String countrycode) throws ResponseStatus 
+	    {
+	        Optional<CurrencyConvertDTO> dto = repository.findById(countrycode);
+	         
+	        if(dto.isPresent()) {
+	            return dto.get();
+	        } else {
+	            throw new ResponseStatus("401" ,"No employee record exist for given id");
+	        }
+	    }*/
+
+
+	     
+	/*  public CurrencyConvertDTO AddOrUpdateConversionFactor(CurrencyConvertDTO dto) throws ResponseStatus 
+	    {
+	       CurrencyConvertDTO dt =  service.FindByCountryCode("01");
+	         
+	        if(((Object) dt).isPresent()) 
+	        {
+	        	CurrencyConvertDTO newdto = dt.get();
+	            newdto.setCountrycode(dto.getCountrycode());
+	            newdto.setConversionfactor(dto.getConversionfactor());
+	         
+	            newdto = repository.save(newdto);
+	             
+	            return newdto;
+	        } 
+	        else
+	        {
+	            dto = repository.save(dto);
+	             
+	            return dto;
+	        }
+		      
+	    }
+	    */
+
+
+
+
+
+	  
+
+}

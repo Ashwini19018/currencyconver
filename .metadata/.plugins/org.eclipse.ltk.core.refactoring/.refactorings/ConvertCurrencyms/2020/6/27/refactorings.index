@@ -1,0 +1,12 @@
+1593364940469	Delete element
+1593364944140	Delete element
+1593364987400	Rename package 'com.ms.boot.CurrencyConvertms'
+1593365018772	Rename type 'CurrencyConvertmsApplication'
+1593365058958	Rename package 'com.ms.boot.CurrencyConvertms.controller'
+1593365085851	Rename type 'CurrencyConvertController'
+1593369416278	Rename package 'com.ms.boot.CurrencyConvertms.model'
+1593371859308	Delete element
+1593373362738	Rename type 'ConvertCurrencyproxy'
+1593376741320	Delete element
+1593377108480	Rename package 'com.ms.boot.CurrencyConvertms.repo'
+1593377125990	Rename package 'com.ms.boot.CurrencyConvertms.service'

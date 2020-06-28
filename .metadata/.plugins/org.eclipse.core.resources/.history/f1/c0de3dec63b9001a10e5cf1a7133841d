@@ -1,0 +1,4 @@
+insert into currconversion(countrycode,conversionFactor) values('01',65.0); 
+insert into currconversion(countrycode,conversionFactor) values('00',75.0);  
+insert into currconversion(countrycode,conversionFactor) values('61',25.0); 
+

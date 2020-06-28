@@ -1,0 +1,14 @@
+package com.ms.boot.CurrencyConvertms.repo;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
+import com.ms.boot.ConvertCurrencyms.model.ConvertCurrencyDTO;
+
+@Component
+public interface ConvertCurrencyRepository extends JpaRepository<ConvertCurrencyDTO, String> {
+
+}
+	
+	     
+

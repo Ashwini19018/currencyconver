@@ -1,0 +1,52 @@
+package com.ms.boot.ConvertCurrencyms.model;  
+import java.math.BigDecimal;  
+public class ConvertCurrencyDTO 
+{  
+private Long id;  
+private String countrycode;  
+private BigDecimal ConversionFactor;  
+private BigDecimal amount;  
+private BigDecimal totalCalculatedAmount;   
+//default constructor  
+public ConvertCurrencyDTO()  
+{     
+}  
+//creating constructor  
+public ConvertCurrencyDTO(String countrycode, BigDecimal conversionFactor, BigDecimal amount, BigDecimal totalCalculatedAmount)   
+{  
+super();  
+
+this.countrycode=countrycode;
+ConversionFactor = conversionFactor;  
+this.amount = amount;  
+this.totalCalculatedAmount = totalCalculatedAmount;  
+}  
+
+public BigDecimal getConversionFactor() {
+	return ConversionFactor;
+}
+public void setConversionFactor(BigDecimal conversionFactor) {
+	ConversionFactor = conversionFactor;
+}
+public BigDecimal getTotalCalculatedAmount()   
+{  
+return totalCalculatedAmount;  
+}  
+public void setTotalCalculatedAmount(BigDecimal totalCalculatedAmount)   
+{  
+this.totalCalculatedAmount = totalCalculatedAmount;  
+}
+public String getCountrycode() {
+	return countrycode;
+}
+public void setCountrycode(String countrycode) {
+	this.countrycode = countrycode;
+}
+public BigDecimal getAmount() {
+	return amount;
+}
+public void setAmount(BigDecimal amount) {
+	this.amount = amount;
+}  
+
+}  

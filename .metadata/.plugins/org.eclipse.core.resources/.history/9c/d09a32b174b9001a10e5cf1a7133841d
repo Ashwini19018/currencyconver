@@ -1,0 +1,28 @@
+package com.ms.boot.CurrencyConvertms.repo;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.ms.boot.ConvertCurrencyms.controller.ResponseStatus;
+import com.ms.boot.ConvertCurrencyms.model.ConvertCurrencyDTO;
+import com.ms.boot.ConvertCurrencyms.model.CurrencyConvertDTO;
+import com.ms.boot.CurrencyConvertms.service.*;
+
+
+
+@Component
+public interface ConvertCurrencyRepository extends JpaRepository<ConvertCurrencyDTO, String> {
+
+	
+     }
+	
+	     
+
