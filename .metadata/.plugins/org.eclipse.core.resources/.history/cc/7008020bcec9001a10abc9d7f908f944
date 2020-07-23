@@ -1,0 +1,5 @@
+package com.ms.boot.ConvertCurrencyms.model;
+
+public class ConvertCurrencyConfig {
+
+}

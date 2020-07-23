@@ -1,0 +1,88 @@
+package com.ms.boot.CurrencyConvertms.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+
+import com.ms.boot.CurrencyConvertms.service.CurrencyConvertService;
+import com.ms.boot.CurrencyConvertms.model.CurrencyConvertDTO;
+import com.ms.boot.CurrencyConvertms.repo.CurrencyConvertRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CurrencyConvertController {
+
+CurrencyConvertDTO dto =new CurrencyConvertDTO();
+//@Autowired
+//CurrencyConvertRepository repository;
+@Autowired
+JdbcTemplate jdbcTemplate;
+
+@Autowired
+Environment environment;
+  
+	 
+//String port1=environment.getProperty("local.server.port");
+//CurrencyConvertDTO.setPort(Integer.parseInt(port1));
+
+ @GetMapping(path="/currencyconversion/countrycode/{countrycode}",produces=MediaType.APPLICATION_JSON_VALUE)
+ public CurrencyConvertDTO getConversionFactor(@PathVariable("countrycode") String countrycode) throws ResponseStatus {
+	// dto.setPort(Integer.parseInt(port1));
+	 dto.setPort(dto.getPort());
+	 System.out.println(dto.getPort());
+    	  return jdbcTemplate.queryForObject("select countrycode,conversionFactor from currconversion where countrycode=?",new Object []{
+    		  countrycode
+    	  } ,new BeanPropertyRowMapper <CurrencyConvertDTO> (CurrencyConvertDTO.class));
+    		  
+      }
+      
+ @GetMapping(path="/currencyconversion/countrycode/{countrycode}/conversionFactor/{conversionFactor}",produces=MediaType.APPLICATION_JSON_VALUE)
+ public int AddConversionFactor(CurrencyConvertDTO dto) throws ResponseStatus {
+	 dto.setPort(dto.getPort());
+	 System.out.println(dto.getPort());
+     	  return jdbcTemplate.update("insert into currconversion(countrycode, conversionFactor)" + " values(? , ?)",new Object []{
+     			  dto.getCountrycode(),dto.getConversionFactor()
+     	  } );
+       
+       }
+       
+@RequestMapping(path="/currencyconversion/conversionFactor/{conversionFactor}/countrycode/{countrycode}",produces=MediaType.APPLICATION_JSON_VALUE)
+public int UpdateConversionFactor(CurrencyConvertDTO dto) throws ResponseStatus {
+	//dto.setPort(Integer.parseInt(port1));	
+    int port2=Integer.parseInt(environment.getProperty("loca.server.port"));
+	dto.setPort(port2);
+	System.out.println(port2);
+	  return jdbcTemplate.update("update currconversion set conversionFactor= ?" + " where countrycode= ? ",new Object []{
+		  dto.getConversionFactor(),dto.getCountrycode()
+	  } );
+  }
+
+} 
+
+   
+
+   
+
+
+
+

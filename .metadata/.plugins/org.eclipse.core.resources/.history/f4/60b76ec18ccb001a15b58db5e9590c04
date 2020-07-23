@@ -1,0 +1,10 @@
+package com.ms.boot.CurrencyConvertms.controller;
+
+public class ResponseStatus  extends RuntimeException {
+	private List<ResponseStatusDTO> responsestatus = new ArrayList<ResponseStatusDTO>();
+	public ResponseStatus(String status ,String errormessage) {
+		    super("Could not add or update the fields in the table ");
+		  }
+		}
+
+

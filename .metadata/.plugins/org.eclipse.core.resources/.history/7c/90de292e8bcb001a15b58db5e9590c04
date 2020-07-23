@@ -1,0 +1,23 @@
+package com.ms.boot.CurrencyConvertms.repo;
+
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+
+import feign.Logger;
+/*
+@Configuration
+
+class LoadDatabase {
+
+  @Bean
+  CommandLineRunner initDatabase(CurrencyConvertRepository repository) {
+    return args -> {
+    //  System.out.println("Preloading " + repository.save(new CurrencyConvertService("001",70.0 )));
+     // System.out.println("Preloading " + repository.save(new CurrencyConvertService("44",93.87 )));
+    };
+  } 
+}
+*/

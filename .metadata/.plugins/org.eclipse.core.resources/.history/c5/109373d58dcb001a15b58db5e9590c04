@@ -1,0 +1,64 @@
+package com.ms.boot.CurrencyConvertms.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+
+import org.springframework.http.MediaType;
+
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.ms.boot.CurrencyConvertms.model.CurrencyConvertDTO;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@RestController
+public class CurrencyConvertController {
+
+CurrencyConvertDTO dto =new CurrencyConvertDTO();
+//@Autowired
+//CurrencyConvertRepository repository;
+@Autowired
+JdbcTemplate jdbcTemplate;
+
+@Autowired
+Environment environment;
+
+
+
+ @GetMapping(path="/currencyconversion/countrycode/{countrycode}",produces=MediaType.APPLICATION_JSON_VALUE)
+ public CurrencyConvertDTO getConversionFactor(@PathVariable("countrycode") String countrycode) {
+
+    	  return jdbcTemplate.queryForObject("select countrycode,conversionFactor from currconversion where countrycode=?",new Object []{
+    		  countrycode
+    	  } ,new BeanPropertyRowMapper <CurrencyConvertDTO> (CurrencyConvertDTO.class));
+    		  
+      }
+      
+ @GetMapping(path="/currencyconversion/countrycode/{countrycode}/conversionFactor/{conversionFactor}",produces=MediaType.APPLICATION_JSON_VALUE)
+ public int AddConversionFactor(CurrencyConvertDTO dto) throws ResponseStatus {
+	
+     	  return jdbcTemplate.update("insert into currconversion(countrycode, conversionFactor)" + " values(? , ?)",new Object []{
+     			  dto.getCountrycode(),dto.getConversionFactor()
+     	  } );
+       
+       }
+       
+@RequestMapping(path="/currencyconversion/conversionFactor/{conversionFactor}/countrycode/{countrycode}",produces=MediaType.APPLICATION_JSON_VALUE)
+public int UpdateConversionFactor(CurrencyConvertDTO dto) throws ResponseStatus {
+	
+	  return jdbcTemplate.update("update currconversion set conversionFactor= ?" + " where countrycode= ? ",new Object []{
+		  dto.getConversionFactor(),dto.getCountrycode()
+	  } );
+  }
+
+} 
+
+   
+
+   
+
+
+
+

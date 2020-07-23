@@ -1,0 +1,21 @@
+package com.ms.boot.ConvertCurrencyms.service;
+
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.ms.boot.ConvertCurrencyms.model.ConvertCurrencyDTO;
+
+
+ @FeignClient(name="CurrencyConvertms")  
+ @RibbonClient(name="ConvertCuurencyms")
+public interface ConvertCurrencyProxy {
+
+	@GetMapping("/currencyconversion/countrycode/{countrycode}")
+	public ConvertCurrencyDTO getConversionFactor(@PathVariable("countrycode") String countrycode); 
+	}	
+	
+
