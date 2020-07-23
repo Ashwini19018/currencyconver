@@ -5206,3 +5206,4 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: expected ST
 2020-07-22 02:07:42,412 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 3 resources
 2020-07-22 02:07:42,427 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-07-22 02:07:42,436 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\w2cluster361\activitywork\CurrencyConvertms\src\test\resources
+2020-07-23 15:51:14,472 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
